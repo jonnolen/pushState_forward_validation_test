@@ -32,7 +32,8 @@ class TestServer < Sinatra::Base
   end 
 
   post '/' do
-    content_type "text/javascript"
+    content_type "text/javascript"   
+    @advance = !params[:valid].nil?
     erb :new
   end
   

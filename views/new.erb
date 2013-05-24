@@ -1,1 +1,22 @@
-console.log("I HAVE RETURNED... from the server");
+<% if @advance %>
+if (postWasBecauseOfForwardAction){
+	oCurrentPage = pages[currentPage];
+	oNextPage = pages[history.state.idx];
+	crossFade(oCurrentPage.id, oNextPage.id);
+	currentPage = oNextPage.idx;
+	postWasBecauseOfForwardAction = false;	
+}
+else{
+	oCurrentPage = pages[currentPage];
+	oNextPage = pages[currentPage+1];
+	crossFade(oCurrentPage.id, oNextPage.id);
+	history.pushState(oNextPage, "", oNextPage.id);
+	currentPage = oNextPage.idx;
+}
+<% else %>
+alert("NO ADVANCE!");
+if (postWasBecauseOfForwardAction){
+	history.back();	
+}
+<% end %>
+	
