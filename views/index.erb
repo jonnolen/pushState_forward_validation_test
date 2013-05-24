@@ -1,0 +1,61 @@
+<html>
+	<head>
+		
+		<style>
+			.hidden{
+				display:none;
+			}
+			div{
+				font-family: sans-serif;
+				text-align: center;
+			}
+			div.page{
+				color:#FFFFFF;
+				font-size: 48px;				
+				height: 300px;
+				width: 500px;				
+				float:left;
+			}
+			div.nav{
+				width:100px;
+				background-color:#999;
+			}
+			#page1{
+				background-color: #99FF99;
+			}
+			#page2{
+				background-color: #FFA319;
+			}
+			#page3{
+				background-color: #36F;
+			}
+			#testPost{
+				width:700px;
+				height:50px;
+				background-color:#CCC;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="back" class="page nav">
+			&lt;
+		</div>
+		<div id="page1" class="page">		
+			Page 1
+		</div>
+		<div id="page2" class="page hidden">
+			Page 2			
+		</div>
+		<div id="page3" class="page hidden">
+			Page 3
+		</div>
+		<div id="forward" class="page nav">
+			&gt;
+		</div>
+		<div id="testPost" style = "clear:both;">
+
+		</div>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+		<script type='text/javascript' src='/js/application.js'></script>
+	</body>
+</html>
