@@ -21,7 +21,10 @@ The goal is to provide push state navigation between steps of a checkout process
 To run this example you need ruby gems and bundler.
 
 From bash:
+
+```bash
 bundle; ruby server.rb;
+```
 
 Then open:
 [http://localhost:4567](http://localhost:4567)
