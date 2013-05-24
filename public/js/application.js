@@ -9,15 +9,24 @@ var crossFade = function(div1, div2){
 		$(div1).hide();
 		$(div2).show();
 	};
+
+var formData = function(){
+	return (formValid?"valid=true":"valid=false");
+}
 var postForm = function(){
-	$.ajax({
+	options = {
 			type:"post",
 			url:"/",
 			beforeSend:function(xhr, settings){
 				xhr.setRequestHeader('accept', '*/*;q=0.5, ' + settings.accepts.script);
 			},
-			data:(formValid?"valid=yes":null)
-		});
+			success:function(data, status, xhr){
+				console.log(data);
+			},
+			data:formData()
+		};
+	console.log(options.data);
+	$.ajax(options);
 	};
 
 $(document).on("ready", function(){	
@@ -73,6 +82,6 @@ $(document).on("ready", function(){
 			}
 		}
 	};
-	
+
 	history.replaceState(pages[currentPage], "", pages[currentPage].id);
 });	

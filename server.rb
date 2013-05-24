@@ -28,12 +28,14 @@ class TestServer < Sinatra::Base
   end
 
   get '/' do    
+    puts "index?  what the what?"
     erb :index
   end 
 
   post '/' do
+    puts "got here"
     content_type "text/javascript"   
-    @advance = !params[:valid].nil?
+    @advance = (params[:valid] == "true")
     erb :new
   end
   
